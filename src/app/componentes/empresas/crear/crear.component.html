@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <div class="mb-2">
+      Registrar nueva empresa
+      <!-- <a href="" [routerLink]="'crear'" class="btn btn-sm btn-secondary px-4 float-end">Registrar</a> -->
+    </div>
+  </div>
+  <div class="card-body">
+
+    <form [formGroup]="formularioEmpresa" (ngSubmit)="enviarDatos()" >
+
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text"
+            class="form-control" name="" formControlName="nombre" id="" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Tipo de empresa</label>
+          <input type="text"
+            class="form-control" name="" formControlName="tipo" id="" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <input type="text" class="form-control" name="" formControlName="direccion" id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n ">
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Colonia</label>
+          <input type="text" class="form-control" name="" formControlName="colonia"c id="" aria-describedby="helpId" placeholder="UET 1 ">
+        </div>
+
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-success ">Registrar</button>
+          <button type="button" class="btn btn-secondary ">Cancelar</button>
+        </div>
+
+    </form>
+
+  </div>
+</div>

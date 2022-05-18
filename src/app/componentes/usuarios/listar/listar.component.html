@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-header">
+      <div class="mb-2">
+        <h4>Lista de usuarios</h4>
+        <a href="" [routerLink]="'crear'" class="btn btn-sm btn-success px-4 float-end">Nueva usuario</a>
+      </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre completo</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Corre Electronico</th>
+          <th scope="col">Empresa registrada</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>mark@gmail.com</td>
+          <td>Sin empresa</td>
+          <td>
+            <div class="row">
+              <div class="col-md-2 col-xs-6">
+                <a  routerLink="/usuarios/editar/1" class="btn btn-warning btn-sm btn-space">Edit</a>
+              </div>
+              <div class="col-md-2 col-xs-6">
+                <button class="btn btn-secondary btn-sm ">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>jacob@gmail.com</td>
+          <td>Sin empresa</td>
+          <td>
+            <div class="row">
+              <div class="col-md-2 col-xs-6">
+                <a routerLink="/usuarios/editar/2" class="btn btn-warning btn-sm btn-space">Edit</a>
+              </div>
+              <div class="col-md-2 col-xs-6">
+                <button class="btn btn-secondary btn-sm ">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>larry@gmail.com</td>
+          <td>Sin empresa</td>
+
+          <td>
+            <div class="row">
+              <div class="col-md-2 col-xs-6">
+                <a routerLink="/usuarios/editar/3" class="btn btn-warning btn-sm btn-space">Edit</a>
+              </div>
+              <div class="col-md-2 col-xs-6">
+                <a class="btn btn-secondary btn-sm ">Delete</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
