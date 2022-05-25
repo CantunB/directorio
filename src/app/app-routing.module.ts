@@ -11,7 +11,7 @@ import { ListarEmpresasComponent } from './componentes/empresas/listar/listar.co
 import { RegistrarComponent } from './componentes/login/registrar/registrar.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full' , redirectTo: 'inicio'},
+  {path: 'login', pathMatch:'full' , redirectTo: 'login'},
   {path: 'inicio', component: InicioComponent },
   {path: 'login', component: LoginComponent },
   {path: 'registrar', component: RegistrarComponent },
