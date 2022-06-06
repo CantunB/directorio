@@ -7,33 +7,39 @@
   </div>
   <div class="card-body">
 
-    <form [formGroup]="formularioEmpresa" (ngSubmit)="enviarDatos()" >
+    <form (ngSubmit)="enviarDatos()" >
 
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
           <input type="text"
-            class="form-control" name="" formControlName="nombre" id="" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            class="form-control"  name="company_name" id="company_name" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            <!-- <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
+              {{ error.company_name }}
+            </div> -->
         </div>
 
         <div class="mb-3">
-          <label for="" class="form-label">Tipo de empresa</label>
+          <label for="" class="form-label">Categoria de empresa</label>
           <input type="text"
-            class="form-control" name="" formControlName="tipo" id="" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            class="form-control" name="category" id="category" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            <!-- <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
+              {{ error.category }}
+            </div> -->
         </div>
 
         <div class="mb-3">
           <label for="" class="form-label">Direccion</label>
-          <input type="text" class="form-control" name="" formControlName="direccion" id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n ">
+          <input type="text" class="form-control" name=""  id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n ">
         </div>
 
         <div class="mb-3">
           <label for="" class="form-label">Colonia</label>
-          <input type="text" class="form-control" name="" formControlName="colonia"c id="" aria-describedby="helpId" placeholder="UET 1 ">
+          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="UET 1 ">
         </div>
 
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-success ">Registrar</button>
-          <button type="button" class="btn btn-secondary ">Cancelar</button>
+          <button type="submit" class="btn btn-success m-2">Registrar</button>
+          <button type="button" class="btn btn-secondary m-2" onclick="history.back()">Cancelar</button>
         </div>
 
     </form>

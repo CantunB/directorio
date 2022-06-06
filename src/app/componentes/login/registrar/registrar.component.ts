@@ -1,5 +1,7 @@
+import { TokenService } from './../../../services/token.service';
 import { ServicesService } from './../../../services/services.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
@@ -20,7 +22,12 @@ export class RegistrarComponent implements OnInit {
     category: null
   };
   public error: any = [] ;
-  constructor( private Service:ServicesService ) { }
+
+  constructor(
+    private Service: ServicesService,
+    private Token: TokenService,
+    private router: Router
+    ) { }
 
 
   ngOnInit(): void {
@@ -29,9 +36,14 @@ export class RegistrarComponent implements OnInit {
   onRegister(){
     // console.log(this.form);
     this.Service.registro(this.register).subscribe(
-      data => console.log(data),
+      data => this.handleResponse(data),
       error => this.handleError(error)
     );
+  }
+
+  handleResponse(data: any){
+    this.Token.handle(data.access_token);
+    this.router.navigateByUrl('/profile');
   }
 
   handleError(error: any){

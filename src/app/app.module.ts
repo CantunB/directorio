@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ServicesService } from './services/services.service';
+import { ProfileComponent } from './componentes/login/profile/profile.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { ServicesService } from './services/services.service';
     ListarUsuariosComponent,
     RegistrarComponent,
     InicioComponent,
+    ProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
