@@ -1,3 +1,5 @@
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,7 +15,7 @@ import { EditarUsuariosComponent } from './componentes/usuarios/editar/editar.co
 import { ListarUsuariosComponent } from './componentes/usuarios/listar/listar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ServicesService } from './services/services.service';
 import { ProfileComponent } from './componentes/login/profile/profile.component';
@@ -40,8 +42,20 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'login' },
+      { path: 'login', component: LoginComponent },
+    ]),
+
   ],
-  providers: [ServicesService],
+  providers: [
+    ServicesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

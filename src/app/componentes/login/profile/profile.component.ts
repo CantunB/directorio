@@ -1,3 +1,5 @@
+import { TokenService } from './../../../services/token.service';
+import { ServicesService } from './../../../services/services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private Service : ServicesService,
+    private Token : TokenService,
+  ) { }
 
   ngOnInit(): void {
+    this.Service.getUser().subscribe(res => {
+      console.log(res);
+    });
+      // this.Empresas = res;
   }
 
 }

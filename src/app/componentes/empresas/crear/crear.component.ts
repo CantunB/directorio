@@ -1,11 +1,10 @@
 
-import { ServicesService } from './../../../services/services.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { TokenService } from './../../../services/token.service';
 import { AuthService } from './../../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { EmpresaService } from 'src/app/servicio/empresa.service';
+import { EmpresasServicesService } from './../../../services/Empresas/empresas-services.service';
 
 @Component({
   selector: 'app-crear',
@@ -14,28 +13,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CrearEmpresasComponent implements OnInit {
 
-  formularioEmpresa: FormGroup;
-    // public formularioEmpresa = {
-    //   company_name: null,
-    //   category: null,
-    //   direccion: null,
-    //   colonia: null,
-    // };
+  // formularioEmpresa: FormGroup;
+    public form = {
+      company_name: null,
+      category: null,
+      direccion: null,
+      colonia: null,
+    };
     public error: any = [] ;
 
   constructor(
     private Token: TokenService,
-    private Service: ServicesService,
+    private EmpresaService: EmpresasServicesService,
     private router : Router,
     private Auth: AuthService,
     public formulario:FormBuilder,
     ) {
-    this.formularioEmpresa = this.formulario.group({
-      company_name: [''],
-      tipo: [''],
-      direccion: [''],
-      colonia: [''],
-    });
+    // this.formularioEmpresa = this.formulario.group({
+    //   company_name: [''],
+    //   category: [''],
+    //   direccion: [''],
+    //   colonia: [''],
+    // });
 
   }
 
@@ -43,20 +42,19 @@ export class CrearEmpresasComponent implements OnInit {
   }
 
   enviarDatos(): any {
-    console.log('Enviando formulario...');
-    this.Service.createEmpresas(this.formularioEmpresa.value).subscribe();
-    // console.log(this.formularioEmpresa.value);
-    // this.empresaServices.RegistrarEmpresas(this.formularioEmpresa.value).subscribe();
+    // console.log('Enviando formulario...');
+    this.EmpresaService.createEmpresas(this.form).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+
+    );
   }
 
-  // onSubmit(){
-  //   this.Service.createEmpresas(this.formularioEmpresa).subscribe(
-  //     data => this.handleResponse(data),
-  //     error => this.handleError(error)
-  //   );
-  // }
 
+  handleResponse(data: any){
+    this.router.navigateByUrl('/empresas');
+  }
   handleError(error: any){
-    this.error = error.error;
+    this.error = error.error.errors;
   }
 }

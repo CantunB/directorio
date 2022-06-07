@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,6 @@ export class ServicesService {
     private Token : TokenService,
     ) { }
 
-  headers = new Headers({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${this.Token.loggedIn()}`
-  });
-
   registro(data:any){
     return this.http.post(`${this.baseUrl}/register`, data);
   }
@@ -25,7 +21,11 @@ export class ServicesService {
     return this.http.post(`${this.baseUrl}/login`, data );
   }
 
-  createEmpresas(data:any){
-    return this.http.post(`${this.baseUrl}/empresas`, { headers: this.headers, data: data });
+  getUser(): Observable<any> {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.Token.get()}`
+    })
+    return this.http.post(`${this.baseUrl}/user`, {headers: headers});
   }
 }

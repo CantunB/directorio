@@ -12,19 +12,19 @@
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
           <input type="text"
-            class="form-control"  name="company_name" id="company_name" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
-            <!-- <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
+            class="form-control" [(ngModel)]="form.company_name" name="company_name" id="company_name" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
               {{ error.company_name }}
-            </div> -->
+            </div>
         </div>
 
         <div class="mb-3">
           <label for="" class="form-label">Categoria de empresa</label>
           <input type="text"
-            class="form-control" name="category" id="category" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
-            <!-- <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
+            class="form-control" [(ngModel)]="form.category" name="category" id="category" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
               {{ error.category }}
-            </div> -->
+            </div>
         </div>
 
         <div class="mb-3">

@@ -14,6 +14,7 @@ import { RegistrarComponent } from './componentes/login/registrar/registrar.comp
 import { ProfileComponent } from './componentes/login/profile/profile.component';
 
 const routes: Routes = [
+  // { path: '', pathMatch: 'full', redirectTo: 'login' },
   {path: 'login', component: LoginComponent, canActivate:[BeforeLoginService]},
   {path: 'registrar', component: RegistrarComponent, canActivate: [BeforeLoginService] },
   {path: 'inicio', component: InicioComponent, canActivate:[AfterLoginService] },

@@ -21,6 +21,7 @@ export class RegistrarComponent implements OnInit {
     company_name: null,
     category: null
   };
+
   public error: any = [] ;
 
   constructor(

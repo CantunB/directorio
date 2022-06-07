@@ -6,16 +6,22 @@
     </div>
   </div>
   <div class="card-body">
-    <form>
+    <form [formGroup]="formularioEmpresa" (ngSubmit)="actualizarEmpresa()" >
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
           <input type="text"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
-        </div>
+            class="form-control" formControlName="company_name"  name="company_name" id="" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
+              {{ error.company_name }}
+          </div>
+          </div>
         <div class="mb-3">
           <label for="" class="form-label">Tipo de empresa</label>
           <input type="text"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            class="form-control" formControlName="category" name="category" id="" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
+              {{ error.category }}
+            </div>
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Direccion</label>
@@ -26,8 +32,8 @@
           <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="UET 1 ">
         </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="button" class="btn btn-success ">Actualizar</button>
-          <button type="button" class="btn btn-secondary ">Cancelar</button>
+          <button type="submit" class="btn btn-primary m-2">Actualizar</button>
+          <button type="button" class="btn btn-secondary m-2" onclick="history.back()">Cancelar</button>
         </div>
     </form>
   </div>
