@@ -12,6 +12,8 @@ import { EditarEmpresasComponent } from './componentes/empresas/editar/editar.co
 import { ListarEmpresasComponent } from './componentes/empresas/listar/listar.component';
 import { RegistrarComponent } from './componentes/login/registrar/registrar.component';
 import { ProfileComponent } from './componentes/login/profile/profile.component';
+import { BusquedasComponent } from './componentes/empresas/busquedas/busquedas.component';
+import { DetallesComponent } from './componentes/empresas/busquedas/detalles/detalles.component';
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: 'empresas', component: ListarEmpresasComponent, canActivate: [AfterLoginService] },
   {path: 'empresas/crear', component: CrearEmpresasComponent, canActivate: [AfterLoginService] },
   {path: 'empresas/editar/:id', component: EditarEmpresasComponent, canActivate: [AfterLoginService] },
+  {path: 'buscar', component: BusquedasComponent},
+  {path: 'buscar/detalles', component: DetallesComponent},
 
 ];
 

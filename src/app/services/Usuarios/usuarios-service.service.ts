@@ -30,4 +30,5 @@ export class UsuariosServiceService {
   updateUsuario(id:any, data: any) : Observable<any> {
     return this.http.patch(`${this.baseUrl}/`+id, data);
   }
+
 }

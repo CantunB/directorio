@@ -20,6 +20,8 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { ServicesService } from './services/services.service';
 import { ProfileComponent } from './componentes/login/profile/profile.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { BusquedasComponent } from './componentes/empresas/busquedas/busquedas.component';
+import { DetallesComponent } from './componentes/empresas/busquedas/detalles/detalles.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     InicioComponent,
     ProfileComponent,
     NavbarComponent,
+    BusquedasComponent,
+    DetallesComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'login' },
-      { path: 'login', component: LoginComponent },
+      // { path: '', pathMatch: 'full', redirectTo: 'login' },
+      // { path: 'login', component: LoginComponent },
     ]),
 
   ],

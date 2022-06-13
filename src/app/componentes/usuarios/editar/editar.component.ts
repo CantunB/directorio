@@ -1,6 +1,6 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { UsuariosServiceService } from './../../../services/Usuarios/usuarios-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -23,6 +23,7 @@ export class EditarUsuariosComponent implements OnInit {
     this.idUsuario = this.router.snapshot.paramMap.get('id');
     // console.log(this.idUsuario);
     this.UsuarioService.showUsuario(this.idUsuario).subscribe( res => {
+      // console.log(res);
       this.formularioUsuario.setValue({
           name: res[0]['name'],
           email: res[0]['email'],
@@ -31,8 +32,9 @@ export class EditarUsuariosComponent implements OnInit {
           address: res[0]['address'],
           suburb: res[0]['suburb'],
       });
-      // console.log(res);
+      console.log(res);
     });
+
     this.formularioUsuario = this.formulario.group({
         name : [''],
         email : [''],
@@ -41,12 +43,15 @@ export class EditarUsuariosComponent implements OnInit {
         address : [''],
         suburb : [''],
     });
+
   }
 
   ngOnInit(): void {
   }
 
   actualizarUsuario(): any {
+    console.log(this.formularioUsuario.value);
+
     this.UsuarioService.updateUsuario(this.idUsuario, this.formularioUsuario.value).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error),

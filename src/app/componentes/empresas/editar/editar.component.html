@@ -24,12 +24,21 @@
             </div>
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Direccion</label>
-          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n ">
+          <label for="" class="form-label">Telefono</label>
+          <input type="text" class="form-control" formControlName="telephone"  name="telephone" id="" aria-describedby="helpId" >
         </div>
         <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <input type="text" class="form-control" formControlName="address"  name="address" id="" aria-describedby="helpId" >
+        </div>
+
+        <div class="mb-3">
           <label for="" class="form-label">Colonia</label>
-          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="UET 1 ">
+          <input type="text" class="form-control" formControlName="suburb" name="" id="suburb" aria-describedby="helpId" placeholder="UET 1 ">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <textarea type="text" class="form-control" formControlName="description"  name="description" id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n "></textarea>
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-primary m-2">Actualizar</button>

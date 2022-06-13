@@ -9,7 +9,7 @@
     <form [formGroup]="formularioUsuario"  (ngSubmit)="actualizarUsuario()"  >
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
-          <input type="text" class="form-control" formControlName="name" name="name" id="name" aria-describedby="helpId" >
+          <input type="text" formControlName="name" name="name" class="form-control" id="name" aria-describedby="helpId" >
           <div class="alert alert-danger" role="alert"  [hidden]="!error.name" >
               {{ error.name }}
             </div>

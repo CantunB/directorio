@@ -17,8 +17,10 @@ export class CrearEmpresasComponent implements OnInit {
     public form = {
       company_name: null,
       category: null,
-      direccion: null,
-      colonia: null,
+      telephone: null,
+      address: null,
+      suburb: null,
+      description: null
     };
     public error: any = [] ;
 

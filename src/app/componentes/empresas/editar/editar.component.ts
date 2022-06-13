@@ -27,13 +27,21 @@ export class EditarEmpresasComponent implements OnInit {
       // console.log(res);
       this.formularioEmpresa.setValue({
         company_name: res[0]['company_name'],
-        category: res[0]['category']
+        category: res[0]['category'],
+        telephone: res[0]['telephone'],
+        address: res[0]['address'],
+        suburb: res[0]['suburb'],
+        description: res[0]['description'],
       });
     });
 
     this.formularioEmpresa = this.formulario.group({
       company_name : [''],
-      category : ['']
+      category : [''],
+      telephone: [''],
+      address: [''],
+      suburb:[''],
+      description: [''],
     });
   }
 
