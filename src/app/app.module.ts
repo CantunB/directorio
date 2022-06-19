@@ -47,8 +47,8 @@ import { DetallesComponent } from './componentes/empresas/busquedas/detalles/det
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      // { path: '', pathMatch: 'full', redirectTo: 'login' },
-      // { path: 'login', component: LoginComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'login' },
+      { path: 'login', component: LoginComponent },
     ]),
 
   ],

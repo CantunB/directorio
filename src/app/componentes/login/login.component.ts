@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   handleResponse(data: any){
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
-    this.router.navigateByUrl('/profile');
+    this.router.navigateByUrl('/buscar');
   }
 
   handleError(error: any){

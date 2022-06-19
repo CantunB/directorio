@@ -44,7 +44,7 @@ export class RegistrarComponent implements OnInit {
 
   handleResponse(data: any){
     this.Token.handle(data.access_token);
-    this.router.navigateByUrl('/profile');
+    this.router.navigateByUrl('/buscar');
   }
 
   handleError(error: any){
