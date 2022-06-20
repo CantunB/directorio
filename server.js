@@ -1,9 +1,12 @@
-let express = require('express');
-let app = express();
+const express = require('express');
+const path = require('path');
 
-app.use(express.static(__dirname+'/dist/directorydigital'));
-app.get('/*', (req, resp)=> {
-  resp.sendFile(__dirname+'/dist/directorydigital/index.html');
+const app = express();
+
+app.use(express.static('./dist/directorydigital'));
+
+app.get('/*', (req,res) => {
+  res.sendFile('index.html', {root: 'dist/directorydigital/'}),
 });
 
-app.listen(process.env.Port || 8080);
+app.listen(process.env.PORT || 8080);
