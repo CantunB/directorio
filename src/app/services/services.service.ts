@@ -7,7 +7,10 @@ import { Injectable } from '@angular/core';
 })
 export class ServicesService {
 
-  private baseUrl = 'http://127.0.0.1:8000/api/v1';
+  // private baseUrl = 'http://127.0.0.1:8000/api/v1';
+  // private baseUrl = 'https://directorio-digital.000webhostapp.com/api/v1';
+  // private baseUrl = 'https://directoriodigital.000webhostapp.com/api/v1';
+  private baseUrl = 'https://fierce-lake-89684.herokuapp.com/api/v1';
   constructor(
     private http: HttpClient,
     private Token : TokenService,

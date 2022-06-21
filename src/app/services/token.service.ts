@@ -6,8 +6,14 @@ import { Injectable } from '@angular/core';
 export class TokenService {
 
   private iss = {
-    login : 'http://127.0.0.1:8000/api/v1/login',
-    signup : 'http://127.0.0.1:8000/api/v1/register'
+    // login : 'http://127.0.0.1:8000/api/v1/login',
+    // login : 'https://directorio-digital.000webhostapp.com/api/v1/login',
+    // login : 'https://directoriodigital.000webhostapp.com/api/v1/login',
+    login : 'https://fierce-lake-89684.herokuapp.com/api/v1/login',
+    // signup : 'http://127.0.0.1:8000/api/v1/register'
+    // signup : 'https://directorio-digital.000webhostapp.com/api/v1/register'
+    // signup : 'https://directoriodigital.000webhostapp.com/api/v1/register'
+    signup : 'https://fierce-lake-89684.herokuapp.com/api/v1/register'
   };
   constructor() { }
 

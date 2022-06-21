@@ -6,7 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BusquedasServicesService {
-  private baseUrl = 'http://127.0.0.1:8000/api/v1/search';
+  // private baseUrl = 'http://127.0.0.1:8000/api/v1/search';
+  // private baseUrl = 'https://directorio-digital.000webhostapp.com/api/v1/search';
+  // private baseUrl = 'https://directoriodigital.000webhostapp.com/api/v1/search';
+  private baseUrl = 'https://fierce-lake-89684.herokuapp.com/api/v1/search';
   constructor(
     private http: HttpClient,
   ) { }
